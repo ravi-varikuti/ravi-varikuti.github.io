@@ -11,7 +11,7 @@
     {% feed_meta %}
     {% seo %}
   </head>
-  <body>
+  <body{% if page.layout == 'home' %} class="home"{% endif %}>
     <a class="skip-link" href="#content">Skip to content</a>
     <div class="shell">
       {% include header.html %}
