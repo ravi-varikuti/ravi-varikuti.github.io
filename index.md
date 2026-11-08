@@ -20,7 +20,7 @@ title: Home
 
 <section class="section-block" id="research">
   <div class="section-heading">
-    <h2>Selected research</h2>
+    <h2>Projects</h2>
   </div>
   <div class="research-grid">
     {% assign projects = site.research | sort: "order" %}

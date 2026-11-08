@@ -151,3 +151,7 @@ img, video { display: block; width: 100%; }
   .research-stats { gap: 12px; }
   .research-stats dt { font-size: 22px; }
 }
+
+.research-figure .research-system-diagram { max-width: 520px; margin: 0 auto; }
+.research-details { margin: 24px 0; border: 1px solid var(--line); padding: 14px 18px; }
+.research-details summary { cursor: pointer; font-size: 13px; }

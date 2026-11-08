@@ -10,25 +10,40 @@ paper_url: https://doi.org/10.1109/LRA.2026.3701572
 venue: IEEE Robotics and Automation Letters, 2026
 simulation_video: /assets/videos/jumping_sim.mp4
 simulation_poster: /assets/images/spinjorr/jumping-sim-poster.jpg
-# Add MP4 files to assets/videos/spinjorr/ and set each video path below.
-# Example: video: /assets/videos/spinjorr/jumping.mp4
+# Behavior clips extracted from Downloads/hoop_small.mp4.
 demos:
   - title: Forward jumping
-    poster: /assets/images/long_jump.png
-    caption: Momentum-driven jumping combines forward motion with obstacle clearance.
-    video: ""
+    poster: /assets/images/spinjorr/forward-jumping-poster.jpg
+    caption: Forward jumps with the height and distance annotations from the original video.
+    video: /assets/videos/spinjorr/forward-jumping.mp4
+    webm: /assets/videos/spinjorr/forward-jumping.webm
   - title: Reverse jumping
-    poster: /assets/images/spinjorr/reverse-jump.png
-    caption: Internal actuation also enables jumps in the reverse direction.
-    video: ""
+    poster: /assets/images/spinjorr/reverse-jumping-poster.jpg
+    caption: Internal actuation launches the robot in the reverse direction.
+    video: /assets/videos/spinjorr/reverse-jumping.mp4
+    webm: /assets/videos/spinjorr/reverse-jumping.webm
   - title: Steering
-    poster: /assets/images/spinjorr/steering.jpg
-    caption: A tip-mounted rotor changes the robot's heading during rolling.
-    video: ""
+    poster: /assets/images/spinjorr/steering-poster.jpg
+    caption: The robot changes heading and maneuvers around obstacles while rolling.
+    video: /assets/videos/spinjorr/steering.mp4
+    webm: /assets/videos/spinjorr/steering.webm
   - title: Self-righting
-    poster: /assets/images/spinjorr/self-righting.png
-    caption: Gyroscopic action and ground contact help the robot recover from a fall.
-    video: ""
+    poster: /assets/images/spinjorr/self-righting-poster.jpg
+    caption: Recovery from a fall using internal actuation, including a slow-motion replay.
+    video: /assets/videos/spinjorr/self-righting.mp4
+    webm: /assets/videos/spinjorr/self-righting.webm
+recovery_demo:
+  title: Recovery after landing
+  poster: /assets/images/spinjorr/jump-recovery-poster.jpg
+  caption: A complete sequence from takeoff and landing to self-righting and resumed rolling.
+  video: /assets/videos/spinjorr/jump-recovery.mp4
+  webm: /assets/videos/spinjorr/jump-recovery.webm
+terrain_demo:
+  title: Mobility across terrain
+  poster: /assets/images/spinjorr/terrain-poster.jpg
+  caption: Rolling and jumping on outdoor surfaces, shown in the original split-screen footage.
+  video: /assets/videos/spinjorr/terrain.mp4
+  webm: /assets/videos/spinjorr/terrain.webm
 ---
 
 <div class="project-resources">
@@ -87,17 +102,25 @@ Once airborne, the robot's center of mass follows a parabolic trajectory under g
 
 ## Motion demonstrations
 
-Experiments demonstrate multiple motion modes on the same platform. Video clips will be added here; the images below show the corresponding experiments.
+The same internal actuation system produces forward and reverse jumps, steering, and self-righting. These clips show each behavior on the physical robot.
 
 <div class="research-gallery">
   {% for demo in page.demos %}
-    {% include research-demo.html demo=demo %}
+    {% include research-video.html clip=demo %}
   {% endfor %}
 </div>
+
+## Recovery after landing
+
+The robot can fall onto its side after a jump and then use its internal actuation to return upright. The complete sequence below connects jumping, landing, self-righting, and resumed rolling on the same platform.
+
+{% include research-video.html clip=page.recovery_demo %}
 
 ## Moving across terrain
 
 SpinJORR was tested on surfaces including asphalt, grass, sand, gravel, tiles, and rubber mats. Rolling supports continuous travel, while jumping adds another way to negotiate uneven terrain and obstacles.
+
+{% include research-video.html clip=page.terrain_demo %}
 
 <figure class="research-figure">
   <img src="{{ '/assets/images/spinjorr/terrain.png' | relative_url }}" alt="SpinJORR rolling and jumping in indoor and outdoor terrain experiments" loading="lazy">

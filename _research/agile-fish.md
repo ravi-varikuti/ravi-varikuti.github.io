@@ -1,11 +1,11 @@
 ---
 title: Learning to control an agile robotic fish
-description: Differentiable reinforcement learning adapts PID gains for simultaneous speed and path tracking, with transfer from simulation to a physical fish-like robot.
+description: Differentiable reinforcement learning adapts PID gains for simultaneous speed and path tracking, with zero-shot transfer from simulation to a physical fish-like robot.
 year: 2026
 order: 2
-poster: /assets/images/agile-fish/tracking.png
-poster_alt: Experimental fish robot paths tracing the letters I, R, O, and S
-poster_fit: cover
+poster: /assets/images/agile-fish/experimental-setup.png
+poster_alt: Fish robot swimming in a pool with overhead camera tracking and onboard control
+poster_fit: contain
 paper_url: https://arxiv.org/abs/2607.16508
 code_url: https://github.com/kloya03/agilefish-diff-rl
 venue: IROS 2026
@@ -50,7 +50,7 @@ clips:
 </div>
 
 <figure class="research-figure">
-  <img src="{{ page.poster | relative_url }}" alt="Fish robot tracking I, R, O, and S paths at four commanded speeds">
+  <img src="{{ '/assets/images/agile-fish/tracking.png' | relative_url }}" alt="Fish robot tracking I, R, O, and S paths at four commanded speeds">
   <figcaption>Physical path-tracking experiments. White, green, magenta, and orange traces correspond to commanded speeds of 0.10, 0.15, 0.20, and 0.25 m/s.</figcaption>
 </figure>
 
