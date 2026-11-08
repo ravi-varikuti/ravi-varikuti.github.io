@@ -1,0 +1,8 @@
+<figure class="research-figure">
+  <video class="research-video-wide" autoplay muted loop playsinline preload="metadata" width="1280" height="720" poster="{{ include.clip.poster | relative_url }}" aria-label="{{ include.clip.title | escape }}">
+    {% if include.clip.webm %}<source src="{{ include.clip.webm | relative_url }}" type="video/webm">{% endif %}
+    <source src="{{ include.clip.video | relative_url }}" type="video/mp4">
+    Your browser does not support embedded video. <a href="{{ include.clip.video | relative_url }}">Download the video</a>.
+  </video>
+  <figcaption><strong>{{ include.clip.title }}</strong> — {{ include.clip.caption }}</figcaption>
+</figure>
