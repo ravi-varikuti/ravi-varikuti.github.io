@@ -10,7 +10,7 @@ title: Home
     <p class="intro">I am interested in robot learning, manipulation, and the systems that make learning on real hardware reliable. My work explores how robots can turn experience into useful behavior.</p>
     <div class="hero-links">
       <a href="mailto:ravi@example.com">Email</a>
-      <a href="https://github.com/ravivarikuti">GitHub</a>
+      <a href="https://github.com/ravi-varikuti">GitHub</a>
       <a href="#">CV</a>
     </div>
   </div>
