@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract robot learning placeholder</title>
+  <desc id="desc">White geometric shapes and motion traces on a black background.</desc>
+  <rect width="1200" height="760" fill="#050505"/>
+  <g fill="none" stroke="#fff">
+    <circle cx="600" cy="380" r="176" stroke-width="2"/>
+    <circle cx="600" cy="380" r="112" stroke-width="2" stroke-dasharray="8 14"/>
+    <path d="M104 574C278 364 391 651 582 425S908 169 1096 288" stroke-width="3"/>
+    <path d="M103 611C300 405 403 681 606 453S919 211 1097 325" opacity=".35"/>
+  </g>
+  <rect x="568" y="348" width="64" height="64" fill="#fff"/>
+  <text x="64" y="696" fill="#fff" font-family="monospace" font-size="18" letter-spacing="3">REAL-WORLD ROBOT LEARNING</text>
+</svg>
+

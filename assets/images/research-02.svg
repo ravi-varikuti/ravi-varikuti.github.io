@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract bimanual manipulation placeholder</title>
+  <desc id="desc">Mirrored white arm-like lines approaching an object on a black background.</desc>
+  <rect width="1200" height="760" fill="#050505"/>
+  <g fill="none" stroke="#fff" stroke-width="4">
+    <path d="M70 178L286 244 414 376 529 406"/>
+    <path d="M1130 178L914 244 786 376 671 406"/>
+    <circle cx="286" cy="244" r="20" fill="#050505"/>
+    <circle cx="914" cy="244" r="20" fill="#050505"/>
+    <circle cx="414" cy="376" r="15" fill="#050505"/>
+    <circle cx="786" cy="376" r="15" fill="#050505"/>
+  </g>
+  <rect x="536" y="348" width="128" height="128" fill="#fff"/>
+  <path d="M536 348L600 300 664 348" fill="none" stroke="#fff" stroke-width="4"/>
+  <text x="64" y="696" fill="#fff" font-family="monospace" font-size="18" letter-spacing="3">BIMANUAL MANIPULATION</text>
+</svg>
+

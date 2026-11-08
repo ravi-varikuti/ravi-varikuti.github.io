@@ -1,0 +1,41 @@
+title: Ravi Varikuti
+description: Personal academic website of Ravi Varikuti — robotics, robot learning, and real-world intelligence.
+url: "https://ravivarikuti.github.io"
+baseurl: ""
+lang: en
+timezone: America/New_York
+
+author:
+  name: Ravi Varikuti
+  email: ravi@example.com
+
+permalink: /writing/:year/:month/:day/:title/
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+collections:
+  research:
+    output: true
+    permalink: /research/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: research
+    values:
+      layout: research
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+
