@@ -9,7 +9,7 @@ author:
   name: Ravi Varikuti
   email: ravi@example.com
 
-permalink: /writing/:year/:month/:day/:title/
+permalink: /blog/:year/:month/:day/:title/
 markdown: kramdown
 
 plugins:

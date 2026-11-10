@@ -39,7 +39,7 @@ Open `http://localhost:4000` in a browser. Press `Ctrl+C` in the terminal to sto
 3. Edit the title, description, date, and article text.
 4. Preview it locally, then commit and push.
 
-Jekyll automatically adds the newest posts to the homepage and Writing page.
+Jekyll automatically adds the newest posts to the homepage and Blog page.
 
 ## Add a research project
 
@@ -112,6 +112,6 @@ git push
 ├── assets/            Styles, images, and videos
 ├── index.md            Homepage
 ├── research.md         Research archive
-├── writing.md          Writing archive
+├── blog.md             Blog archive
 └── about.md            Biography and contact page
 ```

@@ -48,3 +48,19 @@ title: Home
   </div>
 </section>
 
+
+<section class="section-block" id="blog" aria-labelledby="blog-heading">
+  <div class="section-heading">
+    <h2 id="blog-heading">Blog</h2>
+  </div>
+  <div class="post-list">
+    {% for post in site.posts limit:3 %}
+      <a class="post-row" href="{{ post.url | relative_url }}">
+        <span class="post-date">{{ post.date | date: "%Y.%m.%d" }}</span>
+        <span class="post-title">{{ post.title }}</span>
+        <span class="post-arrow" aria-hidden="true">↗</span>
+      </a>
+    {% endfor %}
+  </div>
+  <a class="text-link" href="{{ '/blog/' | relative_url }}">All posts →</a>
+</section>

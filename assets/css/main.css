@@ -155,3 +155,11 @@ img, video { display: block; width: 100%; }
 .research-figure .research-system-diagram { max-width: 520px; margin: 0 auto; }
 .research-details { margin: 24px 0; border: 1px solid var(--line); padding: 14px 18px; }
 .research-details summary { cursor: pointer; font-size: 13px; }
+
+/* Technical blog content stays readable on narrow screens. */
+.prose pre { max-width: 100%; overflow-x: auto; margin: 24px 0; padding: 16px; background: #f7f7f7; border: 1px solid var(--line); font-size: 12px; line-height: 1.6; }
+.prose code { font-family: var(--mono); font-size: .88em; overflow-wrap: anywhere; }
+.prose pre code { font-size: inherit; overflow-wrap: normal; }
+.prose table { display: block; max-width: 100%; overflow-x: auto; margin: 24px 0; border-collapse: collapse; font-size: 13px; }
+.prose th, .prose td { padding: 10px 16px 10px 0; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.prose th { font-weight: 500; }
