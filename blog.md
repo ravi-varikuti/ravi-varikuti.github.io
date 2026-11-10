@@ -15,4 +15,3 @@ permalink: /blog/
   </a>
 {% endfor %}
 </div>
-
