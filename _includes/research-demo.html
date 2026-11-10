@@ -1,6 +1,6 @@
 <figure class="research-figure research-demo">
   {% if include.demo.video and include.demo.video != '' %}
-    <video controls playsinline preload="none" poster="{{ include.demo.poster | relative_url }}" aria-label="{{ include.demo.title | escape }}">
+    <video autoplay muted loop playsinline preload="metadata" poster="{{ include.demo.poster | relative_url }}" aria-label="{{ include.demo.title | escape }}">
       <source src="{{ include.demo.video | relative_url }}" type="video/mp4">
       Your browser does not support embedded video. <a href="{{ include.demo.video | relative_url }}">Download the video</a>.
     </video>

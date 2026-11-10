@@ -1,7 +1,7 @@
 ---
 title: "Trying to get SuperMimic working in JAX"
 description: "A quick experiment with learned humanoid dynamics, some state and normalization tricks, and a lot still left to do."
-reading_time: 6
+reading_time: 8
 policy_demos:
   - title: Dance
     video: /assets/videos/supermimic/policy_dance.mp4
@@ -80,6 +80,22 @@ For dynamics fitting, I use eight-step autoregressive sequences instead of only 
 I also kept rewards analytical. The model predicts the physical state, differentiable kinematics reconstructs body motion, and the same tracking reward is used in simulation and imagination. There is a critic at the end of the imagined rollout, and a smooth survival term to discourage trajectories that are heading toward a tracking failure.
 
 These are the kinds of details I kept poking at while getting the loop running. I still need proper ablations to say which changes help the most.
+
+## The bits I had to fill in myself
+
+One thing I should make clear: I did not get every detail below straight out of the paper. The [paper and appendices](https://arxiv.org/pdf/2610.28480) give the training loop and a lot of useful settings, but I still had to make choices when turning that into code. Here are the main ones I have not verified against an official implementation:
+
+- **Exactly what goes into the state and goals.** I use local state features, increment predictions, quaternion composition, and 73 values per future goal frame. The paper specifies ten future reference frames, but that does not completely pin down my feature layout.
+- **Normalization and loss scaling.** Running state/target statistics, separate policy observation/goal statistics, and per-quantity scale floors are choices in this implementation. I would not assume this is exactly how the original code handles mixed units and prediction errors.
+- **How soft failures are computed.** I turn height and tilt errors into survival probabilities with sigmoids. The smoothing widths, 0.025 m for height and 0.08 for tilt error, are settings I chose here. The paper allows analytical heads; that does not prescribe this particular formula.
+- **How reset scores get updated.** I followed the paper's reset-sampling mixture, but used completed-episode returns with an EMA coefficient of 0.1 and an accumulated history of difficulty weights. Those estimator details are choices I filled in.
+- **Warm-up and update bookkeeping.** I use 500 model-only update blocks before actor learning, then two update blocks per five collected control steps. Those warm-up settings and that interpretation of the update clock need a more careful comparison with the original setup.
+
+The [state/model code](https://github.com/ravi-varikuti/supermimic_jax/blob/main/world_model.py), [termination rules](https://github.com/ravi-varikuti/supermimic_jax/blob/main/terminations.py), and [reset sampler](https://github.com/ravi-varikuti/supermimic_jax/blob/main/reset_sampling.py) make those choices explicit.
+
+I also reduced the batches and environment count to fit the 3090, and tried a Koopman model on the side. That Koopman experiment is an extra in this repo; the paper describes an MLP dynamics model, and all the results here use the MLP too.
+
+So this is where some of the trial and error came in. These choices helped me put together a working experiment, but I still need ablations and a closer implementation check before saying which tricks really matter. That is part of the fuller reimplementation I want to do next.
 
 ## What does the world model actually predict?
 

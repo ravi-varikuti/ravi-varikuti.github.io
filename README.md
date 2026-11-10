@@ -34,7 +34,7 @@ Open `http://localhost:4000` in a browser. Press `Ctrl+C` in the terminal to sto
 
 ## Add a blog post
 
-1. Duplicate the sample file in `_posts/`.
+1. Create a Markdown file in `_posts/`, using an existing post as a starting point.
 2. Name it `YYYY-MM-DD-short-title.md`.
 3. Edit the title, description, date, and article text.
 4. Preview it locally, then commit and push.
